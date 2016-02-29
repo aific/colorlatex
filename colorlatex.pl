@@ -189,6 +189,10 @@ while (<OUT>)
 
 	# LaTeX Warning: ...
 	$thisline =~ s/^(LaTeX\ Warning)/$col_warning$1$col_normal/x;
+	if ($thisline =~ /LaTeX\ Warning/) {
+		# ... line #
+		$thisline =~ s/(line\ )(\d+)/$col_red$1$col_normal$col_cyan$2$col_normal/x;
+	}
 
 	# Class x Warning: ...
 	$thisline =~ s/^(Class\ \w+\ Warning:)/$col_warning$1$col_normal/x;
@@ -204,6 +208,9 @@ while (<OUT>)
 
 	# Overfull ...
 	$thisline =~ s/^(Overfull)/$col_overfull$1$col_normal/x;
+
+	# ... lines x--y
+	$thisline =~ s/(lines\ )(\d+\-\-\d+)/$col_red$1$col_normal$col_cyan$2$col_normal/x;
 
 	# No file ...
 	$thisline =~ s/^(No\ file)/$col_no_file$1$col_normal/x;
