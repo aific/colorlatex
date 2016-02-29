@@ -77,7 +77,7 @@ $remove_see_transcript   = 1;
 $program_name =~ s/color//;
 
 
-# Check the terminal type, and if it is dumb, just exect the program and exit
+# Check the terminal type, and if it is dumb, just exec the program and exit
 
 $terminal = $ENV{"TERM"} || "dumb";
 
