@@ -188,25 +188,25 @@ while (<OUT>)
 	#
 
 	# LaTeX Warning: ...
-	$thisline =~ s/^(LaTeX\ Warning)/$col_warning$1/x;
+	$thisline =~ s/^(LaTeX\ Warning)/$col_warning$1$col_normal/x;
 
 	# Warning--...
-	$thisline =~ s/^(Warning--)/$col_warning$1/x;
+	$thisline =~ s/^(Warning--)/$col_warning$1$col_normal/x;
 
 	# Underfull ...
-	$thisline =~ s/^(Underfull)/$col_underfull$1/x;
+	$thisline =~ s/^(Underfull)/$col_underfull$1$col_normal/x;
 
 	# Overfull ...
-	$thisline =~ s/^(Overfull)/$col_overfull$1/x;
+	$thisline =~ s/^(Overfull)/$col_overfull$1$col_normal/x;
 
 	# No file ...
-	$thisline =~ s/^(No\ file)/$col_no_file$1/x;
+	$thisline =~ s/^(No\ file)/$col_no_file$1$col_normal/x;
 
 	# ./report.tex:78: Undefined...
-	$thisline =~ s/^(.*\.tex:)/$col_error$1/x;
+	$thisline =~ s/^(.*\.tex:)/$col_error$1$col_normal/x;
 
 	# ! ...
-	$thisline =~ s/^(!)/$col_error$1/x;
+	$thisline =~ s/^(!)/$col_error$1$col_normal/x;
 
 
 	#
