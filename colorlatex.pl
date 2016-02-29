@@ -190,6 +190,12 @@ while (<OUT>)
 	# LaTeX Warning: ...
 	$thisline =~ s/^(LaTeX\ Warning)/$col_warning$1$col_normal/x;
 
+	# Class x Warning: ...
+	$thisline =~ s/^(Class\ \w+\ Warning:)/$col_warning$1$col_normal/x;
+
+	# Package x Warning: ...
+	$thisline =~ s/^(Package\ \w+\ Warning:)/$col_warning$1$col_normal/x;
+
 	# Warning--...
 	$thisline =~ s/^(Warning--)/$col_warning$1$col_normal/x;
 
@@ -207,6 +213,9 @@ while (<OUT>)
 
 	# ! ...
 	$thisline =~ s/^(!)/$col_error$1$col_normal/x;
+
+	# LaTeX Error: ...
+	$thisline =~ s/(LaTeX\ Error:)/$col_error$1$col_normal/x;
 
 
 	#
