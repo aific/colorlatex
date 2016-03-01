@@ -195,10 +195,10 @@ while (<OUT>)
 	}
 
 	# Class x Warning: ...
-	$thisline =~ s/^(Class\ \w+\ Warning:)/$col_warning$1$col_normal/x;
+	$thisline =~ s/^(Class\ \w+\ Warning)/$col_warning$1$col_normal/x;
 
 	# Package x Warning: ...
-	$thisline =~ s/^(Package\ \w+\ Warning:)/$col_warning$1$col_normal/x;
+	$thisline =~ s/^(Package\ \w+\ Warning)/$col_warning$1$col_normal/x;
 
 	# Warning--...
 	$thisline =~ s/^(Warning--)/$col_warning$1$col_normal/x;
