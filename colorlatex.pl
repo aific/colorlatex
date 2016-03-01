@@ -40,7 +40,9 @@ use IPC::Open3;
 
 
 # Color constants
+$use_light_colors = 0;
 
+# original colors
 $col_gray         = "\033[37m";
 $col_purple       = "\033[35m";
 $col_green        = "\033[32m";
@@ -48,6 +50,17 @@ $col_cyan         = "\033[36m";
 $col_brown        = "\033[33m";
 $col_red          = "\033[31m";
 $col_blue         = "\033[34m";
+
+# lighter colors, for dark terminals
+if ($use_light_colors) {
+	$col_gray         = "\033[37m";
+	$col_purple       = "\033[95m";
+	$col_green        = "\033[92m";
+	$col_cyan         = "\033[96m";
+	$col_brown        = "\033[93m";
+	$col_red          = "\033[91m";
+	$col_blue         = "\033[94m";
+}
 
 $col_brighten     = "\033[01m";
 $col_underline    = "\033[04m";
