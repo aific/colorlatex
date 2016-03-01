@@ -188,8 +188,8 @@ while (<OUT>)
 	#
 
 	# LaTeX Warning: ...
-	$thisline =~ s/^(LaTeX\ Warning)/$col_warning$1$col_normal/x;
-	if ($thisline =~ /LaTeX\ Warning/) {
+	if ($thisline =~ /^(LaTeX\ Warning)/) {
+		$thisline =~ s/^(LaTeX\ Warning)/$col_warning$1$col_normal/x;
 		# ... line #
 		$thisline =~ s/(line\ )(\d+)/$col_red$1$col_normal$col_cyan$2$col_normal/x;
 	}
